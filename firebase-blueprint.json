@@ -1,0 +1,73 @@
+{
+  "entities": {
+    "BusinessProfile": {
+      "title": "BusinessProfile",
+      "description": "Reputation and business settings for a local business",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 200 },
+        "location": { "type": "string", "maxLength": 200 },
+        "category": { "type": "string", "maxLength": 100 },
+        "googleRating": { "type": "number" },
+        "totalReviews": { "type": "number" },
+        "monthlyReviewsCount": { "type": "number" },
+        "reviewGoal": { "type": "number" },
+        "googleMapsUrl": { "type": "string", "maxLength": 500 },
+        "autoReplyTone": { "type": "string", "maxLength": 50 },
+        "autoReplyEnabled": { "type": "boolean" },
+        "autoSocialMarketing": { "type": "boolean" },
+        "userId": { "type": "string", "maxLength": 128 },
+        "createdAt": { "type": "string", "maxLength": 100 },
+        "updatedAt": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["name", "userId"]
+    },
+    "ReviewItem": {
+      "title": "ReviewItem",
+      "description": "Customer Google review record",
+      "type": "object",
+      "properties": {
+        "customerName": { "type": "string", "maxLength": 150 },
+        "rating": { "type": "number" },
+        "timeAgo": { "type": "string", "maxLength": 100 },
+        "text": { "type": "string", "maxLength": 2000 },
+        "replied": { "type": "boolean" },
+        "replyText": { "type": "string", "maxLength": 2000 },
+        "replyDate": { "type": "string", "maxLength": 100 },
+        "isAutoReplied": { "type": "boolean" },
+        "userId": { "type": "string", "maxLength": 128 },
+        "createdAt": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["customerName", "rating", "text", "userId"]
+    },
+    "CustomerRequest": {
+      "title": "CustomerRequest",
+      "description": "Logged review request sent to customer",
+      "type": "object",
+      "properties": {
+        "customerName": { "type": "string", "maxLength": 150 },
+        "phoneOrEmail": { "type": "string", "maxLength": 200 },
+        "channel": { "type": "string", "maxLength": 50 },
+        "sentAt": { "type": "string", "maxLength": 100 },
+        "status": { "type": "string", "maxLength": 50 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "createdAt": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["customerName", "channel", "userId"]
+    }
+  },
+  "firestore": {
+    "/businesses/{businessId}": {
+      "schema": { "$ref": "#/entities/BusinessProfile" },
+      "description": "Stores profile settings for each business user"
+    },
+    "/reviews/{reviewId}": {
+      "schema": { "$ref": "#/entities/ReviewItem" },
+      "description": "Stores review items for businesses"
+    },
+    "/customer_requests/{requestId}": {
+      "schema": { "$ref": "#/entities/CustomerRequest" },
+      "description": "Stores log of review invitations sent to customers"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Aura Lokal — Reputation System",
+  "description": "Radically simplified reputation system helping local businesses get and manage Google reviews.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

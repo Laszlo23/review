@@ -1,0 +1,117 @@
+import { BusinessProfile, ReviewItem, CustomerRequest, MonthlyMetric } from '../types';
+
+export const initialBusinessProfile: BusinessProfile = {
+  id: 'korperglanz-1',
+  name: 'Körperglanz Shapeline',
+  location: 'Wien',
+  category: 'Beauty & Body Shaping',
+  googleRating: 4.9,
+  totalReviews: 127,
+  monthlyReviewsCount: 23,
+  reviewGoal: 999,
+  googleReviewUrl: 'https://g.page/r/korperglanz-shapeline/review',
+  autoReplyEnabled: true,
+  autoReplyTone: 'friendly',
+  isPaid: false,
+  subscriptionPlan: 'none',
+};
+
+export const initialReviews: ReviewItem[] = [
+  {
+    id: 'rev-1',
+    customerName: 'Anna M.',
+    rating: 5,
+    text: 'Fantastic experience! The team is incredibly warm, professional, and the results after 3 sessions are already noticeable. Highly recommended!',
+    date: '2026-08-12',
+    timeAgo: '2h ago',
+    replied: true,
+    replyText: 'Vielen Dank für Ihre wunderbare Bewertung, Anna! Es freut uns riesig, dass Sie mit den Ergebnissen zufrieden sind. Bis zum nächsten Mal!',
+    isAutoReplied: true,
+  },
+  {
+    id: 'rev-2',
+    customerName: 'Michael K.',
+    rating: 5,
+    text: 'Super friendly atmosphere and top modern equipment in Vienna. Very punctual and attentive service.',
+    date: '2026-08-11',
+    timeAgo: 'Yesterday',
+    replied: true,
+    replyText: 'Vielen Dank, Michael! Wir legen großen Wert auf Pünktlichkeit und die beste Ausstattung für unsere Kunden.',
+    isAutoReplied: true,
+  },
+  {
+    id: 'rev-3',
+    customerName: 'Sophie B.',
+    rating: 5,
+    text: 'Sehr schönes Studio in Wien. Kompetente Beratung und wirklich sichtbare Effekte. Komme auf jeden Fall wieder!',
+    date: '2026-08-09',
+    timeAgo: '3 days ago',
+    replied: true,
+    replyText: 'Herzlichen Dank, liebe Sophie! Es ist uns eine Freude, Sie bei uns begrüßen zu dürfen.',
+    isAutoReplied: true,
+  },
+  {
+    id: 'rev-4',
+    customerName: 'Lukas W.',
+    rating: 5,
+    text: 'Aura und Atmosphäre im Studio sind klasse. Unkomplizierte Terminvergabe und tolles Feedback per WhatsApp.',
+    date: '2026-08-05',
+    timeAgo: '1 week ago',
+    replied: true,
+    replyText: 'Danke für dein tolles Feedback, Lukas! Wir freuen uns sehr darüber.',
+    isAutoReplied: true,
+  },
+  {
+    id: 'rev-5',
+    customerName: 'Elena R.',
+    rating: 4,
+    text: 'Sehr nettes Personal und saubere Räumlichkeiten. Parkplatzsuche war etwas knifflig, aber die Behandlung war hervorragend.',
+    date: '2026-08-02',
+    timeAgo: '10 days ago',
+    replied: false,
+  },
+];
+
+export const initialCustomerRequests: CustomerRequest[] = [
+  {
+    id: 'req-1',
+    customerName: 'Anna M.',
+    phoneOrEmail: '+43 676 1234567',
+    channel: 'whatsapp',
+    sentAt: 'Today, 14:20',
+    status: 'reviewed',
+  },
+  {
+    id: 'req-2',
+    customerName: 'Thomas S.',
+    phoneOrEmail: '+43 664 9876543',
+    channel: 'sms',
+    sentAt: 'Today, 11:05',
+    status: 'opened',
+  },
+  {
+    id: 'req-3',
+    customerName: 'Claudia K.',
+    phoneOrEmail: '+43 699 4567890',
+    channel: 'whatsapp',
+    sentAt: 'Yesterday, 16:45',
+    status: 'sent',
+  },
+  {
+    id: 'req-4',
+    customerName: 'Markus H.',
+    phoneOrEmail: 'In-studio QR scan',
+    channel: 'qr',
+    sentAt: 'Yesterday, 10:15',
+    status: 'reviewed',
+  },
+];
+
+export const initialMonthlyMetrics: MonthlyMetric[] = [
+  { month: 'Mar', count: 12 },
+  { month: 'Apr', count: 15 },
+  { month: 'May', count: 18 },
+  { month: 'Jun', count: 21 },
+  { month: 'Jul', count: 19 },
+  { month: 'Aug', count: 23 },
+];
